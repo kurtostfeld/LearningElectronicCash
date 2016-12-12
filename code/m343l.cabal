@@ -1,0 +1,70 @@
+name:                m343l
+version:             0.1.0.0
+license:             BSD3
+license-file:        LICENSE
+author:              Kurt Ostfeld
+maintainer:          kurtostfeld@gmail.com
+build-type:          Simple
+cabal-version:       >=1.10
+
+-- stack ghci m343l:lib
+library
+  hs-source-dirs:      src
+  exposed-modules:     Modulo, BinaryUtilities, RandomUtilities, SimpleRSA, MillerRabin
+                     , Bank, BankMember, ECashCommon, ECashDemos
+                     , PeerRecipient, PeerPayer
+  build-depends:       base >= 4.7 && < 5
+                     , containers
+                     , multimap
+                     , random  
+                     , split
+  default-language:    Haskell2010
+
+-- Run with:
+-- stack exec PayDemo
+-- stack ghci m343l:exe:PayDemo
+executable PayDemo
+  hs-source-dirs:      app
+  main-is:             PayDemo.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , m343l
+                     , split
+  default-language:    Haskell2010
+
+-- Run with:
+-- stack exec DoubleDepositDemo
+executable DoubleDepositDemo
+  hs-source-dirs:      app
+  main-is:             DoubleDepositDemo.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , m343l
+                     , split
+  default-language:    Haskell2010
+
+-- Run with:
+-- stack exec DoublePaymentDemo
+executable DoublePaymentDemo
+  hs-source-dirs:      app
+  main-is:             DoublePaymentDemo.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , m343l
+                     , split
+  default-language:    Haskell2010
+
+-- Run with:
+-- stack test   
+-- stack ghci m343l:test:m343l-test
+test-suite m343l-test
+  type:                exitcode-stdio-1.0
+  hs-source-dirs:      test
+  main-is:             m343lTests.hs
+  build-depends:       base
+                     , HUnit >= 1.3.1
+                     , test-framework
+                     , test-framework-hunit
+                     , m343l
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  default-language:    Haskell2010

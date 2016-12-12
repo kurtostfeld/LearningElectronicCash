@@ -1,0 +1,8 @@
+project
+target
+\#*
+*\~
+.*
+!/.gitignore
+!/.arcconfig
+
