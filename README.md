@@ -26,7 +26,6 @@ A simple overview of how this works: The withdrawing user generates a random num
 You will need haskell stack installed. On a Mac, with the Homebrew package manager, this would be installed with `brew install haskell-stack`.
 
 ```
-cd code
 stack build
 ```
 
@@ -37,7 +36,7 @@ Alice withdraws a bank certified coin, issues peer-to-peer payment with Bob, Bob
 To run:
 
 ```
-stack exec PayDemo
+stack exec paydemo-exe
 ```
 
 Things to note:
@@ -51,7 +50,7 @@ Things to note:
 Here Alice withdraws a bank certified coin, issues peer-to-peer payment with Bob, Bob deposits in the bank, and then erroneously attempts to do so a second time.
 
 ```
-stack exec DoubleDepositDemo
+stack exec doubledeposit-exe
 ```
 
 The withdrawl + payment proceeds successfully, the first deposit succeeds. The second deposit fails, as expected, with:
@@ -65,7 +64,7 @@ deposit error: conflict detected: Identical challenge sequence. Likely same reci
 Here Alice withdraws a bank certified coin, issues peer-to-peer payment with Bob, uses the same coin to erroneously issue peer-to-peer payment ot a second recipient, Charlie. Both Bob and Charlie attempt to deposit the coins, the second user will trigger the error and since they use different challenge sequences, the bank is able to recover and unmask the identity of the withdrawl.
 
 ```
-stack exec DoublePaymentDemo
+stack exec doublepayment-exe
 ```
 
 The error message to look for is something like this:
