@@ -1,0 +1,102 @@
+-- This file has been generated from package.yaml by hpack version 0.28.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 44f7da4a5b68619d7ce7adfeb2c9e94c416bcfe21fbb3bc3532f7b94c09d767e
+
+name:           ecash
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/kurtostfeld/LearningElectronicCash#readme>
+homepage:       https://github.com/kurtostfeld/LearningElectronicCash#readme
+bug-reports:    https://github.com/kurtostfeld/LearningElectronicCash/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2018 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+cabal-version:  >= 1.10
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/kurtostfeld/LearningElectronicCash
+
+library
+  exposed-modules:
+      Bank
+      BankMember
+      BinaryUtilities
+      ECashCommon
+      ECashDemos
+      MillerRabin
+      Modulo
+      PeerPayer
+      PeerRecipient
+      Polynomials
+      RandomUtilities
+      SimpleRSA
+  other-modules:
+      Paths_ecash
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , multimap
+    , random
+    , split
+  default-language: Haskell2010
+
+executable doubledeposit-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_ecash
+  hs-source-dirs:
+      doubledeposit
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , ecash
+  default-language: Haskell2010
+
+executable doublepayment-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_ecash
+  hs-source-dirs:
+      doublepayment
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , ecash
+  default-language: Haskell2010
+
+executable paydemo-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_ecash
+  hs-source-dirs:
+      paydemo
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , ecash
+  default-language: Haskell2010
+
+test-suite ecash-test
+  type: exitcode-stdio-1.0
+  main-is: m343lTests.hs
+  other-modules:
+      Paths_ecash
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      HUnit
+    , base >=4.7 && <5
+    , ecash
+    , test-framework
+    , test-framework-hunit
+  default-language: Haskell2010

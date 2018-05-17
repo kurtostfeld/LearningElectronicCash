@@ -1,5 +1,7 @@
 {-# LANGUAGE ScopedTypeVariables #-}
 
+module Main (main) where
+
 import ECashDemos
 
 main :: IO ()
