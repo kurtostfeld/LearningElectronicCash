@@ -1,8 +1,13 @@
+# Ignore hidden files. Whitelist exceptions
+.*
+!.gitignore
+
+# Emacs
+[#]*[#]
+*\~
+
+# Haskell
 project
 target
-\#*
-*\~
-.*
-!/.gitignore
-!/.arcconfig
+*.lock
 

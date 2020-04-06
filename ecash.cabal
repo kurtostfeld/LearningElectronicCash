@@ -1,8 +1,10 @@
--- This file has been generated from package.yaml by hpack version 0.28.2.
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 44f7da4a5b68619d7ce7adfeb2c9e94c416bcfe21fbb3bc3532f7b94c09d767e
+-- hash: 074fd16d92a31a61447d5929e05359b97925d1e96b395c7ed90b8cfdbe2cd94e
 
 name:           ecash
 version:        0.1.0.0
@@ -11,11 +13,10 @@ homepage:       https://github.com/kurtostfeld/LearningElectronicCash#readme
 bug-reports:    https://github.com/kurtostfeld/LearningElectronicCash/issues
 author:         Author name here
 maintainer:     example@example.com
-copyright:      2018 Author name here
+copyright:      2020 Author name here
 license:        BSD3
 license-file:   LICENSE
 build-type:     Simple
-cabal-version:  >= 1.10
 extra-source-files:
     README.md
 
@@ -23,6 +24,7 @@ source-repository head
   type: git
   location: https://github.com/kurtostfeld/LearningElectronicCash
 
+# stack ghci ecash:lib
 library
   exposed-modules:
       Bank
@@ -49,6 +51,7 @@ library
     , split
   default-language: Haskell2010
 
+# stack exec doubledeposit-exe
 executable doubledeposit-exe
   main-is: Main.hs
   other-modules:
@@ -61,6 +64,7 @@ executable doubledeposit-exe
     , ecash
   default-language: Haskell2010
 
+# stack exec doublepayment-exe
 executable doublepayment-exe
   main-is: Main.hs
   other-modules:
@@ -73,6 +77,8 @@ executable doublepayment-exe
     , ecash
   default-language: Haskell2010
 
+# stack ghci ecash:exe:paydemo-exe
+# stack exec paydemo-exe
 executable paydemo-exe
   main-is: Main.hs
   other-modules:
@@ -85,6 +91,7 @@ executable paydemo-exe
     , ecash
   default-language: Haskell2010
 
+# stack test
 test-suite ecash-test
   type: exitcode-stdio-1.0
   main-is: m343lTests.hs
