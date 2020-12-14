@@ -24,7 +24,7 @@ source-repository head
   type: git
   location: https://github.com/kurtostfeld/LearningElectronicCash
 
-# stack ghci ecash:lib
+-- stack ghci ecash:lib
 library
   exposed-modules:
       Bank
@@ -51,7 +51,7 @@ library
     , split
   default-language: Haskell2010
 
-# stack exec doubledeposit-exe
+-- stack exec doubledeposit-exe
 executable doubledeposit-exe
   main-is: Main.hs
   other-modules:
@@ -64,7 +64,7 @@ executable doubledeposit-exe
     , ecash
   default-language: Haskell2010
 
-# stack exec doublepayment-exe
+-- stack exec doublepayment-exe
 executable doublepayment-exe
   main-is: Main.hs
   other-modules:
@@ -77,8 +77,8 @@ executable doublepayment-exe
     , ecash
   default-language: Haskell2010
 
-# stack ghci ecash:exe:paydemo-exe
-# stack exec paydemo-exe
+-- stack ghci ecash:exe:paydemo-exe
+-- stack exec paydemo-exe
 executable paydemo-exe
   main-is: Main.hs
   other-modules:
@@ -91,7 +91,7 @@ executable paydemo-exe
     , ecash
   default-language: Haskell2010
 
-# stack test
+-- stack test
 test-suite ecash-test
   type: exitcode-stdio-1.0
   main-is: m343lTests.hs
