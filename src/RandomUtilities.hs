@@ -60,14 +60,14 @@ deterministicallyRandomlyFlipBits n gen = xor n $ fst $ randomIntegerNBits (simp
        -- Chaum Paper Functions
 chaumF :: Integer -> Integer -> Integer -> Integer
 chaumF n a b =
-  let gen :: StdGen = read "1865050052 1"
+  let gen :: StdGen = mkStdGen 1865050052
       a' = deterministicallyRandomlyFlipBits a gen
       b' = deterministicallyRandomlyFlipBits b gen
   in (a + b) `mod` n
 
 chaumG :: Integer -> Integer -> Integer -> Integer
 chaumG n a b =
-  let gen :: StdGen = read "2052883677 1"
+  let gen :: StdGen = mkStdGen 2052883677
       a' = deterministicallyRandomlyFlipBits a gen
       b' = deterministicallyRandomlyFlipBits b gen
   in (a + b) `mod` n
